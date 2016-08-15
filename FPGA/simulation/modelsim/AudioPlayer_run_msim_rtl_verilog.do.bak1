@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA {J:/Project/Audio Player/FPGA/led.v}
+vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA {J:/Project/Audio Player/FPGA/PLL.v}
+vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA/db {J:/Project/Audio Player/FPGA/db/pll_altpll.v}
+

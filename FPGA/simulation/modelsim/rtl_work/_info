@@ -1,0 +1,182 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dJ:/Project/Audio Player/FPGA/simulation/modelsim
+vclock_2
+Z1 !s110 1468331036
+!i10b 1
+!s100 2SeF7<Qj<eaLn>41V^M_i2
+IV1HV=Z6GM5hNNDLAV7YCz2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1468330864
+8J:/Project/Audio Player/FPGA/clock_2.v
+FJ:/Project/Audio Player/FPGA/clock_2.v
+L0 1
+Z3 OV;L;10.4b;61
+r1
+!s85 0
+31
+Z4 !s108 1468331036.000000
+!s107 J:/Project/Audio Player/FPGA/clock_2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+J:/Project/Audio Player/FPGA|J:/Project/Audio Player/FPGA/clock_2.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+J:/Project/Audio Player/FPGA}
+vclock_4
+R1
+!i10b 1
+!s100 JOZ2oGe@`:7coBAlKZilJ2
+IzK;fB9km9`]mlD4[nR6RN3
+R2
+R0
+w1468330961
+8J:/Project/Audio Player/FPGA/clock_4.v
+FJ:/Project/Audio Player/FPGA/clock_4.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 J:/Project/Audio Player/FPGA/clock_4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+J:/Project/Audio Player/FPGA|J:/Project/Audio Player/FPGA/clock_4.v|
+!i113 1
+R5
+R6
+vclock_switch_in
+R1
+!i10b 1
+!s100 oMzVCL4^QcZX>;LJ:[EKk3
+I:He>WSgL@W@70>LK_X3Hz0
+R2
+R0
+w1466774001
+8J:/Project/Audio Player/FPGA/clock_switch_in.v
+FJ:/Project/Audio Player/FPGA/clock_switch_in.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 J:/Project/Audio Player/FPGA/clock_switch_in.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+J:/Project/Audio Player/FPGA|J:/Project/Audio Player/FPGA/clock_switch_in.v|
+!i113 1
+R5
+R6
+vclock_switch_out
+R1
+!i10b 1
+!s100 YiRL:m0[6dbk<W`O6egU91
+I<Aih`=j5KWI7<2YJL5`VE0
+R2
+R0
+w1466773055
+8J:/Project/Audio Player/FPGA/clock_switch_out.v
+FJ:/Project/Audio Player/FPGA/clock_switch_out.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 J:/Project/Audio Player/FPGA/clock_switch_out.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+J:/Project/Audio Player/FPGA|J:/Project/Audio Player/FPGA/clock_switch_out.v|
+!i113 1
+R5
+R6
+vPLL_225792
+!s110 1468331035
+!i10b 1
+!s100 _n^fAHLf[jz<h2f4dOWU61
+IZ@Rn`KD9PN[gbh2i8gU>S1
+R2
+R0
+w1468329701
+8J:/Project/Audio Player/FPGA/PLL_225792.v
+FJ:/Project/Audio Player/FPGA/PLL_225792.v
+Z7 L0 40
+R3
+r1
+!s85 0
+31
+!s108 1468331035.000000
+!s107 J:/Project/Audio Player/FPGA/PLL_225792.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+J:/Project/Audio Player/FPGA|J:/Project/Audio Player/FPGA/PLL_225792.v|
+!i113 1
+R5
+R6
+n@p@l@l_225792
+vPLL_225792_altpll
+R1
+!i10b 1
+!s100 OVJk73cXOG4L9Vl]G8igc1
+I[CAHTXM?2SUH7^YS_Z2^Q2
+R2
+R0
+w1468330979
+8J:/Project/Audio Player/FPGA/db/pll_225792_altpll.v
+FJ:/Project/Audio Player/FPGA/db/pll_225792_altpll.v
+Z8 L0 31
+R3
+r1
+!s85 0
+31
+R4
+!s107 J:/Project/Audio Player/FPGA/db/pll_225792_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+J:/Project/Audio Player/FPGA/db|J:/Project/Audio Player/FPGA/db/pll_225792_altpll.v|
+!i113 1
+R5
+Z9 !s92 -vlog01compat -work work {+incdir+J:/Project/Audio Player/FPGA/db}
+n@p@l@l_225792_altpll
+vPLL_24576_1
+R1
+!i10b 1
+!s100 Ye[fYE6^0dfV5>P:a>7S02
+IXNjDfGB:ZQ=[fUTL7EF751
+R2
+R0
+w1466601064
+8J:/Project/Audio Player/FPGA/PLL_24576_1.v
+FJ:/Project/Audio Player/FPGA/PLL_24576_1.v
+R7
+R3
+r1
+!s85 0
+31
+R4
+!s107 J:/Project/Audio Player/FPGA/PLL_24576_1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+J:/Project/Audio Player/FPGA|J:/Project/Audio Player/FPGA/PLL_24576_1.v|
+!i113 1
+R5
+R6
+n@p@l@l_24576_1
+vPLL_24576_1_altpll
+R1
+!i10b 1
+!s100 VeKl8D[3]c=M9e;hW?QF22
+IFOn5jHZOn78<n5mf7AT7<3
+R2
+R0
+w1466773204
+8J:/Project/Audio Player/FPGA/db/pll_24576_1_altpll.v
+FJ:/Project/Audio Player/FPGA/db/pll_24576_1_altpll.v
+R8
+R3
+r1
+!s85 0
+31
+R4
+!s107 J:/Project/Audio Player/FPGA/db/pll_24576_1_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+J:/Project/Audio Player/FPGA/db|J:/Project/Audio Player/FPGA/db/pll_24576_1_altpll.v|
+!i113 1
+R5
+R9
+n@p@l@l_24576_1_altpll

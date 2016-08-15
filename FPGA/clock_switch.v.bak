@@ -1,0 +1,51 @@
+module clock_switch ([14:0]clk_in,[7:0]data,data_clk,data_en,clk_out,next,rst);
+input [14:0] clk_in;
+input [7:0] data;
+input data_clk;
+input data_en;
+input next;
+input rst;
+output clk_out;
+
+reg [7:0]data_reg;
+wire clk_out;
+
+always @ (posedge rst)
+begin
+		data_reg = 1'b0;
+		assign clk_out = 1'b0;
+end
+
+always @ (posedge data_clk)
+begin
+	if(data_en)
+	begin
+		data_reg = data;
+	end
+end
+
+always @ (posedge next)
+begin
+	case (data_reg)
+		7'b000000000 assign clk_out = clk_in[0];  //44.1KHz@16bit    1.4112Mhz
+		7'b010000000 assign clk_out = clk_in[1];  //44.1KHz@32bit    2.8824Mhz
+		7'b000000100 assign clk_out = clk_in[2];  //176.4KHz@16bit   5.6448Mhz
+		7'b001000100 assign clk_out = clk_in[3];  //176.4KHz@24bit   8.4672Mhz
+		7'b010000100 assign clk_out = clk_in[4];  //176.4KHz@32bit  11.2896Mhz
+		7'b000000001 assign clk_out = clk_in[5];  //48KHz@16bit      1.536 Mhz
+		7'b001000001 assign clk_out = clk_in[6];  //48KHz@24bit      2.304 Mhz
+		7'b010000001 assign clk_out = clk_in[7];  //48KHz@32bit      3.072 Mhz
+		7'b000000010 assign clk_out = clk_in[7];  //96KHz@16bit      3.072 Mhz
+		7'b001000010 assign clk_out = clk_in[9];  //96KHz@24bit      4.608 Mhz
+		7'b010000010 assign clk_out = clk_in[10]; //96KHz@32bit      6.144 Mhz
+		7'b000000011 assign clk_out = clk_in[8];  //128KHz@16bit     4.096 Mhz
+		7'b001000011 assign clk_out = clk_in[10]; //128KHz@24bit     6.144 Mhz
+		7'b010000011 assign clk_out = clk_in[11]; //128KHz@32bit     8.192 Mhz
+		7'b000000101 assign clk_out = clk_in[10]; //192KHz@16bit     6.144 Mhz
+		7'b001000101 assign clk_out = clk_in[12]; //192KHz@24bit     9.216 Mhz
+		7'b010000101 assign clk_out = clk_in[13]; //192KHz@32bit    12.288 Mhz
+		
+		7'b100000000 assign clk_out = clk_in[1];  //DSD              2.8224Mhz
+end
+
+endmodule

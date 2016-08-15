@@ -1,0 +1,24 @@
+module clock_switch_in (data_in,data_clk_in,data_en_in,data_out,rst);
+	input [7:0] data_in;
+	input data_clk;
+	input data_en;
+	input rst;
+	output [7:0] data_out;
+
+	reg [7:0]data_out;
+	reg clk_out;
+
+	always @ (posedge rst or posedge data_clk)
+	begin
+		if(rst)
+		begin
+			data_out = 8'hFF;
+		end
+		if(data_en)
+		begin
+			data_out = data_in;
+		end
+
+	end
+
+endmodule

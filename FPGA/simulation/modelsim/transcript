@@ -1,0 +1,75 @@
+# Compile of clock_4.v was successful.
+# Compile of clock_2.v was successful.
+# 2 compiles, 0 failed with no errors.
+vmap -del work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet -del work 
+# Removing reference to logical library work
+# Modifying J:/Project/Audio Player/FPGA/simulation/modelsim/work.mpf
+vmap work {J:/Project/Audio Player/FPGA}
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work J:/Project/Audio Player/FPGA 
+# Modifying J:/Project/Audio Player/FPGA/simulation/modelsim/work.mpf
+# ** Error: (vish-19) Failed to access library 'J:/Project/Audio Player/FPGA' at "J:/Project/Audio Player/FPGA".
+# No such file or directory. (errno = ENOENT)
+vlog -work {J:/Project/Audio Player/FPGA} -refresh -force_refresh
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:35:09 on Jul 12,2016
+# vlog -reportprogress 300 -work J:/Project/Audio Player/FPGA -refresh -force_refresh 
+# ** Error: (vlib-35) Failed to create directory "J:/Project/Audio Player/FPGA".
+# 
+# File exists. (errno = EEXIST)
+# End time: 21:35:09 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# D:/altera_lite/15.1/modelsim_ase/win32aloem/vlog failed.
+vcom -work {J:/Project/Audio Player/FPGA} -refresh -force_refresh
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:35:09 on Jul 12,2016
+# vcom -reportprogress 300 -work J:/Project/Audio Player/FPGA -refresh -force_refresh 
+# End time: 21:35:10 on Jul 12,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+vlib aa
+vmap aa {J:/Project/Audio Player/FPGA/simulation/modelsim/aa}
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet aa J:/Project/Audio Player/FPGA/simulation/modelsim/aa 
+# Modifying J:/Project/Audio Player/FPGA/simulation/modelsim/work.mpf
+vmap -del aa
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet -del aa 
+# Removing reference to logical library aa
+# Modifying J:/Project/Audio Player/FPGA/simulation/modelsim/work.mpf
+vmap aa {J:/Project/Audio Player/FPGA/simulation/modelsim}
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet aa J:/Project/Audio Player/FPGA/simulation/modelsim 
+# Modifying J:/Project/Audio Player/FPGA/simulation/modelsim/work.mpf
+vlog -work {J:/Project/Audio Player/FPGA/simulation/modelsim} -refresh -force_refresh
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:36:14 on Jul 12,2016
+# vlog -reportprogress 300 -work J:/Project/Audio Player/FPGA/simulation/modelsim -refresh -force_refresh 
+# ** Error: (vlib-35) Failed to create directory "J:/Project/Audio Player/FPGA/simulation/modelsim".
+# 
+# File exists. (errno = EEXIST)
+# End time: 21:36:14 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# D:/altera_lite/15.1/modelsim_ase/win32aloem/vlog failed.
+vcom -work {J:/Project/Audio Player/FPGA/simulation/modelsim} -refresh -force_refresh
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:36:14 on Jul 12,2016
+# vcom -reportprogress 300 -work J:/Project/Audio Player/FPGA/simulation/modelsim -refresh -force_refresh 
+# End time: 21:36:14 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vmap -del aa
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet -del aa 
+# Removing reference to logical library aa
+# Modifying J:/Project/Audio Player/FPGA/simulation/modelsim/work.mpf
+vdel -all -lib aa
+vmap -del work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet -del work 
+# Removing reference to logical library work
+# Modifying J:/Project/Audio Player/FPGA/simulation/modelsim/work.mpf
+vdel -all -lib work

@@ -1,0 +1,133 @@
+# do AudioPlayer_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Copying D:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA {J:/Project/Audio Player/FPGA/PLL_225792.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:43:55 on Jul 12,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+J:/Project/Audio Player/FPGA" J:/Project/Audio Player/FPGA/PLL_225792.v 
+# -- Compiling module PLL_225792
+# 
+# Top level modules:
+# 	PLL_225792
+# End time: 21:43:55 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA {J:/Project/Audio Player/FPGA/PLL_24576_1.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:43:56 on Jul 12,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+J:/Project/Audio Player/FPGA" J:/Project/Audio Player/FPGA/PLL_24576_1.v 
+# -- Compiling module PLL_24576_1
+# 
+# Top level modules:
+# 	PLL_24576_1
+# End time: 21:43:56 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA {J:/Project/Audio Player/FPGA/clock_switch_in.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:43:56 on Jul 12,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+J:/Project/Audio Player/FPGA" J:/Project/Audio Player/FPGA/clock_switch_in.v 
+# -- Compiling module clock_switch_in
+# 
+# Top level modules:
+# 	clock_switch_in
+# End time: 21:43:56 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA {J:/Project/Audio Player/FPGA/clock_switch_out.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:43:56 on Jul 12,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+J:/Project/Audio Player/FPGA" J:/Project/Audio Player/FPGA/clock_switch_out.v 
+# -- Compiling module clock_switch_out
+# 
+# Top level modules:
+# 	clock_switch_out
+# End time: 21:43:56 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA {J:/Project/Audio Player/FPGA/clock_2.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:43:56 on Jul 12,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+J:/Project/Audio Player/FPGA" J:/Project/Audio Player/FPGA/clock_2.v 
+# -- Compiling module clock_2
+# 
+# Top level modules:
+# 	clock_2
+# End time: 21:43:56 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA {J:/Project/Audio Player/FPGA/clock_4.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:43:56 on Jul 12,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+J:/Project/Audio Player/FPGA" J:/Project/Audio Player/FPGA/clock_4.v 
+# -- Compiling module clock_4
+# 
+# Top level modules:
+# 	clock_4
+# End time: 21:43:56 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA/db {J:/Project/Audio Player/FPGA/db/pll_225792_altpll.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:43:56 on Jul 12,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+J:/Project/Audio Player/FPGA/db" J:/Project/Audio Player/FPGA/db/pll_225792_altpll.v 
+# -- Compiling module PLL_225792_altpll
+# 
+# Top level modules:
+# 	PLL_225792_altpll
+# End time: 21:43:56 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+J:/Project/Audio\ Player/FPGA/db {J:/Project/Audio Player/FPGA/db/pll_24576_1_altpll.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 21:43:56 on Jul 12,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+J:/Project/Audio Player/FPGA/db" J:/Project/Audio Player/FPGA/db/pll_24576_1_altpll.v 
+# -- Compiling module PLL_24576_1_altpll
+# 
+# Top level modules:
+# 	PLL_24576_1_altpll
+# End time: 21:43:56 on Jul 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.clock_2
+# vsim work.clock_2 
+# Start time: 21:44:16 on Jul 12,2016
+# Loading work.clock_2
+add wave -position insertpoint  \
+sim:/clock_2/clk_in \
+sim:/clock_2/clk_out
+add wave -position insertpoint  \
+sim:/clock_2/reset
+force -freeze sim:/clock_2/reset 0 0
+force -freeze sim:/clock_2/clk_in 1 0, 0 {50 ps} -r 100
+run
+run
+run
+run
+run
+run
+vsim work.clock_4
+# End time: 21:44:50 on Jul 12,2016, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 0
+# vsim work.clock_4 
+# Start time: 21:44:50 on Jul 12,2016
+# Loading work.clock_4
+add wave -position insertpoint  \
+sim:/clock_4/clk_in \
+sim:/clock_4/reset \
+sim:/clock_4/clk_out
+force -freeze sim:/clock_4/clk_in 1 0, 0 {50 ps} -r 100
+force -freeze sim:/clock_4/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 21:45:16 on Jul 12,2016, Elapsed time: 0:00:26
+# Errors: 0, Warnings: 0
