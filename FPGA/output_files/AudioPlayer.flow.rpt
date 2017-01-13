@@ -1,5 +1,5 @@
 Flow report for AudioPlayer
-Tue Jul 26 17:57:37 2016
+Tue Jan 03 21:30:44 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Flow Failed - Tue Jul 26 17:57:37 2016      ;
+; Flow Status                        ; Successful - Tue Jan 03 21:30:44 2017       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; AudioPlayer                                 ;
 ; Top-level Entity Name              ; AudioPlayer                                 ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 104 / 6,272 ( 2 % )                         ;
-;     Total combinational functions  ; 104 / 6,272 ( 2 % )                         ;
-;     Dedicated logic registers      ; 45 / 6,272 ( < 1 % )                        ;
-; Total registers                    ; 45                                          ;
-; Total pins                         ; 18 / 92 ( 20 % )                            ;
+; Total logic elements               ; 105 / 6,272 ( 2 % )                         ;
+;     Total combinational functions  ; 105 / 6,272 ( 2 % )                         ;
+;     Dedicated logic registers      ; 56 / 6,272 ( < 1 % )                        ;
+; Total registers                    ; 56                                          ;
+; Total pins                         ; 19 / 92 ( 21 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/26/2016 17:57:21 ;
+; Start date & time ; 01/03/2017 21:29:52 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; AudioPlayer         ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 229044591462884.146952704111788       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 229044591462886.148345019208708       ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
@@ -97,25 +97,31 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 798 MB              ; 00:00:22                           ;
-; Fitter               ; 00:00:01     ; 1.0                     ; 973 MB              ; 00:00:01                           ;
-; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:23                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:11     ; 1.0                     ; 802 MB              ; 00:00:25                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 1126 MB             ; 00:00:08                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 734 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 785 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 696 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:38                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Flow OS Summary                                                                   ;
-+----------------------+------------------+-----------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; Mecono-X99       ; Windows 8 ; 6.2        ; x86_64         ;
-; Fitter               ; Mecono-X99       ; Windows 8 ; 6.2        ; x86_64         ;
-+----------------------+------------------+-----------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; Mecono-X99       ; Windows 8 ; 6.2        ; x86_64         ;
+; Fitter                    ; Mecono-X99       ; Windows 8 ; 6.2        ; x86_64         ;
+; Assembler                 ; Mecono-X99       ; Windows 8 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Mecono-X99       ; Windows 8 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; Mecono-X99       ; Windows 8 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
@@ -123,6 +129,9 @@ agreement for further details.
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off AudioPlayer -c AudioPlayer
 quartus_fit --read_settings_files=off --write_settings_files=off AudioPlayer -c AudioPlayer
+quartus_asm --read_settings_files=off --write_settings_files=off AudioPlayer -c AudioPlayer
+quartus_sta AudioPlayer -c AudioPlayer
+quartus_eda --read_settings_files=off --write_settings_files=off AudioPlayer -c AudioPlayer
 
 
 

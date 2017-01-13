@@ -32,6 +32,13 @@ agreement for further details.
 		(line (pt 0 32)(pt 16 32)(line_width 1))
 	)
 	(port
+		(pt 0 48)
+		(input)
+		(text "rst" (rect 0 0 10 12)(font "Arial" ))
+		(text "rst" (rect 21 43 31 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
 		(pt 144 32)
 		(output)
 		(text "leda[3..0]" (rect 0 0 35 12)(font "Arial" ))
@@ -40,7 +47,7 @@ agreement for further details.
 	)
 	(parameter
 		"MAX"
-		"1536000"
+		"1000"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

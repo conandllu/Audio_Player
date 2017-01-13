@@ -1,20 +1,21 @@
 |AudioPlayer
 led1 <= leda[3].DB_MAX_OUTPUT_PORT_TYPE
-next => clock_switch_out:inst5.next
-RESET => clock_switch_out:inst5.rst
 RESET => PLL_225792:inst.areset
-RESET => clock_2:inst1.reset
-RESET => clock_4:inst6.reset
 RESET => clock_4:inst3.reset
+RESET => clock_2:inst1.reset
 RESET => PLL_24576_2:inst7.areset
-RESET => clock_2:inst14.reset
 RESET => clock_4:inst13.reset
-RESET => clock_2:inst12.reset
 RESET => clock_4:inst11.reset
+RESET => clock_2:inst12.reset
+RESET => clock_2:inst14.reset
 RESET => clock_2:inst10.reset
+RESET => clock_4:inst6.reset
+RESET => clock_switch_out:inst5.rst
 RESET => clock_switch_in:inst4.rst
+RESET => LED:inst2.rst
 CLK_225792 => PLL_225792:inst.inclk0
 CLK_24576 => PLL_24576_2:inst7.inclk0
+next => clock_switch_out:inst5.next
 clock => clock_switch_in:inst4.data_clk_in
 reg_add => clock_switch_in:inst4.data_en_in
 data[0] => clock_switch_in:inst4.data_in[0]
@@ -28,67 +29,104 @@ data[7] => clock_switch_in:inst4.data_in[7]
 led2 <= leda[2].DB_MAX_OUTPUT_PORT_TYPE
 led3 <= leda[1].DB_MAX_OUTPUT_PORT_TYPE
 led4 <= leda[0].DB_MAX_OUTPUT_PORT_TYPE
+CLK_OUT <= clock_switch_out:inst5.clk_out
 
 
 |AudioPlayer|LED:inst2
+clk => i[0].CLK
+clk => i[1].CLK
+clk => i[2].CLK
+clk => i[3].CLK
+clk => i[4].CLK
+clk => i[5].CLK
+clk => i[6].CLK
+clk => i[7].CLK
+clk => i[8].CLK
+clk => i[9].CLK
+clk => i[10].CLK
+clk => i[11].CLK
+clk => i[12].CLK
+clk => i[13].CLK
+clk => i[14].CLK
+clk => i[15].CLK
+clk => i[16].CLK
+clk => i[17].CLK
+clk => i[18].CLK
+clk => i[19].CLK
+clk => i[20].CLK
+clk => i[21].CLK
+clk => i[22].CLK
+clk => i[23].CLK
+clk => i[24].CLK
+clk => i[25].CLK
+clk => i[26].CLK
+clk => i[27].CLK
+clk => i[28].CLK
+clk => i[29].CLK
+clk => i[30].CLK
+clk => i[31].CLK
 clk => leda[0]~reg0.CLK
 clk => leda[1]~reg0.CLK
 clk => leda[2]~reg0.CLK
 clk => leda[3]~reg0.CLK
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => count[4].CLK
-clk => count[5].CLK
-clk => count[6].CLK
-clk => count[7].CLK
-clk => count[8].CLK
-clk => count[9].CLK
-clk => count[10].CLK
-clk => count[11].CLK
-clk => count[12].CLK
-clk => count[13].CLK
-clk => count[14].CLK
-clk => count[15].CLK
-clk => count[16].CLK
-clk => count[17].CLK
-clk => count[18].CLK
-clk => count[19].CLK
-clk => count[20].CLK
-clk => count[21].CLK
-clk => count[22].CLK
-clk => count[23].CLK
-clk => count[24].CLK
-clk => count[25].CLK
-clk => count[26].CLK
-clk => count[27].CLK
-clk => count[28].CLK
-clk => count[29].CLK
-clk => count[30].CLK
-clk => count[31].CLK
 leda[0] <= leda[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 leda[1] <= leda[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 leda[2] <= leda[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 leda[3] <= leda[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rst => leda[0]~reg0.ACLR
+rst => leda[1]~reg0.ACLR
+rst => leda[2]~reg0.ACLR
+rst => leda[3]~reg0.ACLR
+rst => i[0].ENA
+rst => i[31].ENA
+rst => i[30].ENA
+rst => i[29].ENA
+rst => i[28].ENA
+rst => i[27].ENA
+rst => i[26].ENA
+rst => i[25].ENA
+rst => i[24].ENA
+rst => i[23].ENA
+rst => i[22].ENA
+rst => i[21].ENA
+rst => i[20].ENA
+rst => i[19].ENA
+rst => i[18].ENA
+rst => i[17].ENA
+rst => i[16].ENA
+rst => i[15].ENA
+rst => i[14].ENA
+rst => i[13].ENA
+rst => i[12].ENA
+rst => i[11].ENA
+rst => i[10].ENA
+rst => i[9].ENA
+rst => i[8].ENA
+rst => i[7].ENA
+rst => i[6].ENA
+rst => i[5].ENA
+rst => i[4].ENA
+rst => i[3].ENA
+rst => i[2].ENA
+rst => i[1].ENA
 
 
 |AudioPlayer|clock_switch_out:inst5
-clk_in[0] => Selector0.IN31
-clk_in[1] => Selector0.IN30
-clk_in[2] => Selector0.IN29
-clk_in[3] => Selector0.IN28
-clk_in[4] => Selector0.IN27
-clk_in[5] => Selector0.IN26
-clk_in[6] => Selector0.IN25
-clk_in[7] => Selector0.IN24
-clk_in[8] => Selector0.IN23
-clk_in[9] => Selector0.IN22
-clk_in[10] => Selector0.IN21
-clk_in[11] => Selector0.IN20
-clk_in[12] => Selector0.IN19
-clk_in[13] => Selector0.IN18
-clk_in[14] => Selector0.IN17
+clk_in0 => Selector0.IN17
+clk_in1 => Selector0.IN18
+clk_in2 => Selector0.IN19
+clk_in3 => Selector0.IN20
+clk_in4 => Selector0.IN21
+clk_in5 => Selector0.IN22
+clk_in6 => Selector0.IN23
+clk_in7 => Selector0.IN24
+clk_in8 => Selector0.IN25
+clk_in9 => Selector0.IN26
+clk_in10 => Selector0.IN27
+clk_in11 => Selector0.IN28
+clk_in12 => Selector0.IN29
+clk_in13 => Selector0.IN30
+clk_in14 => Selector0.IN31
 data_in[0] => Decoder0.IN7
 data_in[1] => Decoder0.IN6
 data_in[2] => Decoder0.IN5
@@ -97,10 +135,19 @@ data_in[4] => Decoder0.IN3
 data_in[5] => Decoder0.IN2
 data_in[6] => Decoder0.IN1
 data_in[7] => Decoder0.IN0
-clk_out <= clk_out$latch.DB_MAX_OUTPUT_PORT_TYPE
-next => clk_out.OUTPUTSELECT
-next => clk_out.IN0
-rst => clk_out.IN1
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+next => ~NO_FANOUT~
+rst => clk_out.OUTPUTSELECT
+
+
+|AudioPlayer|clock_4:inst3
+clk_in => count[0].CLK
+clk_in => count[1].CLK
+clk_in => clk_out~reg0.CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reset => count[0].ACLR
+reset => count[1].ACLR
+reset => clk_out~reg0.ACLR
 
 
 |AudioPlayer|PLL_225792:inst
@@ -191,29 +238,13 @@ clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 reset => clk_out~reg0.ACLR
 
 
-|AudioPlayer|clock_4:inst6
+|AudioPlayer|clock_4:inst13
 clk_in => count[0].CLK
 clk_in => count[1].CLK
 clk_in => clk_out~reg0.CLK
 clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 reset => count[0].ACLR
 reset => count[1].ACLR
-reset => clk_out~reg0.ACLR
-
-
-|AudioPlayer|clock_4:inst3
-clk_in => count[0].CLK
-clk_in => count[1].CLK
-clk_in => clk_out~reg0.CLK
-clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
-reset => count[0].ACLR
-reset => count[1].ACLR
-reset => clk_out~reg0.ACLR
-
-
-|AudioPlayer|clock_2:inst14
-clk_in => clk_out~reg0.CLK
-clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 reset => clk_out~reg0.ACLR
 
 
@@ -300,7 +331,7 @@ inclk[1] => pll1.CLK1
 locked <= locked.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|AudioPlayer|clock_4:inst13
+|AudioPlayer|clock_4:inst11
 clk_in => count[0].CLK
 clk_in => count[1].CLK
 clk_in => clk_out~reg0.CLK
@@ -316,13 +347,9 @@ clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 reset => clk_out~reg0.ACLR
 
 
-|AudioPlayer|clock_4:inst11
-clk_in => count[0].CLK
-clk_in => count[1].CLK
+|AudioPlayer|clock_2:inst14
 clk_in => clk_out~reg0.CLK
 clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
-reset => count[0].ACLR
-reset => count[1].ACLR
 reset => clk_out~reg0.ACLR
 
 
@@ -332,33 +359,56 @@ clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 reset => clk_out~reg0.ACLR
 
 
+|AudioPlayer|clock_4:inst6
+clk_in => count[0].CLK
+clk_in => count[1].CLK
+clk_in => clk_out~reg0.CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reset => count[0].ACLR
+reset => count[1].ACLR
+reset => clk_out~reg0.ACLR
+
+
 |AudioPlayer|clock_switch_in:inst4
-data_in[0] => data_out[0].DATAB
-data_in[1] => data_out[1].DATAB
-data_in[2] => data_out[2].DATAB
-data_in[3] => data_out[3].DATAB
-data_in[4] => data_out[4].DATAB
-data_in[5] => data_out[5].DATAB
-data_in[6] => data_out[6].DATAB
-data_in[7] => data_out[7].DATAB
-data_clk_in => ~NO_FANOUT~
-data_en_in => data_out[0].OUTPUTSELECT
-data_en_in => data_out[1].OUTPUTSELECT
-data_en_in => data_out[2].OUTPUTSELECT
-data_en_in => data_out[3].OUTPUTSELECT
-data_en_in => data_out[4].OUTPUTSELECT
-data_en_in => data_out[5].OUTPUTSELECT
-data_en_in => data_out[6].OUTPUTSELECT
-data_en_in => data_out[7].OUTPUTSELECT
-data_en_in => data_out[7].IN0
-data_out[0] <= data_out[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
-data_out[1] <= data_out[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
-data_out[2] <= data_out[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
-data_out[3] <= data_out[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
-data_out[4] <= data_out[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
-data_out[5] <= data_out[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
-data_out[6] <= data_out[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
-data_out[7] <= data_out[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
-rst => data_out[7].IN1
+data_in[0] => data_out[0]~reg0.DATAIN
+data_in[1] => data_out[1]~reg0.DATAIN
+data_in[2] => data_out[2]~reg0.DATAIN
+data_in[3] => data_out[3]~reg0.DATAIN
+data_in[4] => data_out[4]~reg0.DATAIN
+data_in[5] => data_out[5]~reg0.DATAIN
+data_in[6] => data_out[6]~reg0.DATAIN
+data_in[7] => data_out[7]~reg0.DATAIN
+data_clk_in => data_out[0]~reg0.CLK
+data_clk_in => data_out[1]~reg0.CLK
+data_clk_in => data_out[2]~reg0.CLK
+data_clk_in => data_out[3]~reg0.CLK
+data_clk_in => data_out[4]~reg0.CLK
+data_clk_in => data_out[5]~reg0.CLK
+data_clk_in => data_out[6]~reg0.CLK
+data_clk_in => data_out[7]~reg0.CLK
+data_en_in => data_out[0]~reg0.ENA
+data_en_in => data_out[7]~reg0.ENA
+data_en_in => data_out[6]~reg0.ENA
+data_en_in => data_out[5]~reg0.ENA
+data_en_in => data_out[4]~reg0.ENA
+data_en_in => data_out[3]~reg0.ENA
+data_en_in => data_out[2]~reg0.ENA
+data_en_in => data_out[1]~reg0.ENA
+data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rst => data_out[0]~reg0.PRESET
+rst => data_out[1]~reg0.PRESET
+rst => data_out[2]~reg0.PRESET
+rst => data_out[3]~reg0.PRESET
+rst => data_out[4]~reg0.PRESET
+rst => data_out[5]~reg0.PRESET
+rst => data_out[6]~reg0.PRESET
+rst => data_out[7]~reg0.PRESET
 
 

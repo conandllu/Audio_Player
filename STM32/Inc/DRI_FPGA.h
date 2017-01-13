@@ -28,7 +28,7 @@ typedef enum {
 // FNSTATUS_Pin   PB9
 // FDCLK_Pin      PB8
 // FCONG_DONE_Pin PB4
-
+/*
 #define nCONFIG_HIGH()    HAL_GPIO_WritePin(GPIOE, FNCONFIG_Pin, GPIO_PIN_SET)
 #define nCONFIG_LOW()     HAL_GPIO_WritePin(GPIOE, FNCONFIG_Pin, GPIO_PIN_RESET)
 
@@ -44,7 +44,7 @@ typedef enum {
 
 #define FCONG_DONE_LOW()    HAL_GPIO_WritePin(GPIOB, FCONG_DONE_Pin, GPIO_PIN_RESET)
 #define FCONG_DONE_HIGH()   HAL_GPIO_WritePin(GPIOB, FCONG_DONE_Pin, GPIO_PIN_SET)
-
+*/
 /*  FPGA_Init : FPGA≥ı ºªØ                                              */
 FPGA_STATUS FPGA_Init(FIL* fp, const TCHAR* path);
 

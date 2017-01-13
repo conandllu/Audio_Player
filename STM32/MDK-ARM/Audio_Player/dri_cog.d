@@ -2,7 +2,7 @@ audio_player\dri_cog.o: ..\Src\DRI_COG.c
 audio_player\dri_cog.o: ../Inc/DRI_COG.h
 audio_player\dri_cog.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 audio_player\dri_cog.o: ../Inc/stm32f4xx_hal_conf.h
-audio_player\dri_cog.o: ../Inc/mxconstants.h
+audio_player\dri_cog.o: ../Inc/main.h
 audio_player\dri_cog.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
 audio_player\dri_cog.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 audio_player\dri_cog.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h

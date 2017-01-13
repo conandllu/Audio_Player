@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AudioPlayer
-Tue Jul 26 17:57:31 2016
+Tue Jan 03 21:30:04 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -14,16 +14,18 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Parameter Settings for User Entity Instance: LED:inst2
- 13. Parameter Settings for User Entity Instance: PLL_225792:inst|altpll:altpll_component
- 14. Parameter Settings for User Entity Instance: PLL_24576_2:inst7|altpll:altpll_component
- 15. altpll Parameter Settings by Entity Instance
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: LED:inst2
+ 14. Parameter Settings for User Entity Instance: PLL_225792:inst|altpll:altpll_component
+ 15. Parameter Settings for User Entity Instance: PLL_24576_2:inst7|altpll:altpll_component
+ 16. altpll Parameter Settings by Entity Instance
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -50,16 +52,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 26 17:57:31 2016       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jan 03 21:30:04 2017       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; AudioPlayer                                 ;
 ; Top-level Entity Name              ; AudioPlayer                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 103                                         ;
-;     Total combinational functions  ; 103                                         ;
-;     Dedicated logic registers      ; 45                                          ;
-; Total registers                    ; 45                                          ;
-; Total pins                         ; 18                                          ;
+; Total logic elements               ; 105                                         ;
+;     Total combinational functions  ; 105                                         ;
+;     Dedicated logic registers      ; 56                                          ;
+; Total registers                    ; 56                                          ;
+; Total pins                         ; 19                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -188,39 +190,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                  ;
-+---------------------------------------------+--------------------------------+
-; Resource                                    ; Usage                          ;
-+---------------------------------------------+--------------------------------+
-; Estimated Total logic elements              ; 103                            ;
-;                                             ;                                ;
-; Total combinational functions               ; 103                            ;
-; Logic element usage by number of LUT inputs ;                                ;
-;     -- 4 input functions                    ; 28                             ;
-;     -- 3 input functions                    ; 22                             ;
-;     -- <=2 input functions                  ; 53                             ;
-;                                             ;                                ;
-; Logic elements by mode                      ;                                ;
-;     -- normal mode                          ; 72                             ;
-;     -- arithmetic mode                      ; 31                             ;
-;                                             ;                                ;
-; Total registers                             ; 45                             ;
-;     -- Dedicated logic registers            ; 45                             ;
-;     -- I/O registers                        ; 0                              ;
-;                                             ;                                ;
-; I/O pins                                    ; 18                             ;
-;                                             ;                                ;
-; Embedded Multiplier 9-bit elements          ; 0                              ;
-;                                             ;                                ;
-; Total PLLs                                  ; 2                              ;
-;     -- PLLs                                 ; 2                              ;
-;                                             ;                                ;
-; Maximum fan-out node                        ; clock_switch_out:inst5|clk_out ;
-; Maximum fan-out                             ; 37                             ;
-; Total fan-out                               ; 402                            ;
-; Average fan-out                             ; 2.16                           ;
-+---------------------------------------------+--------------------------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 105         ;
+;                                             ;             ;
+; Total combinational functions               ; 105         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 15          ;
+;     -- 3 input functions                    ; 21          ;
+;     -- <=2 input functions                  ; 69          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 74          ;
+;     -- arithmetic mode                      ; 31          ;
+;                                             ;             ;
+; Total registers                             ; 56          ;
+;     -- Dedicated logic registers            ; 56          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 19          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Total PLLs                                  ; 2           ;
+;     -- PLLs                                 ; 2           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; RESET~input ;
+; Maximum fan-out                             ; 59          ;
+; Total fan-out                               ; 449         ;
+; Average fan-out                             ; 2.23        ;
++---------------------------------------------+-------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -228,8 +230,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
-; |AudioPlayer                                 ; 103 (0)           ; 45 (0)       ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |AudioPlayer                                                                             ; work         ;
-;    |LED:inst2|                               ; 56 (56)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|LED:inst2                                                                   ; work         ;
+; |AudioPlayer                                 ; 105 (0)           ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |AudioPlayer                                                                             ; work         ;
+;    |LED:inst2|                               ; 57 (57)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|LED:inst2                                                                   ; work         ;
 ;    |PLL_225792:inst|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|PLL_225792:inst                                                             ; work         ;
 ;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|PLL_225792:inst|altpll:altpll_component                                     ; work         ;
 ;          |PLL_225792_altpll:auto_generated|  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|PLL_225792:inst|altpll:altpll_component|PLL_225792_altpll:auto_generated    ; work         ;
@@ -239,12 +241,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |clock_2:inst10|                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_2:inst10                                                              ; work         ;
 ;    |clock_2:inst12|                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_2:inst12                                                              ; work         ;
 ;    |clock_2:inst14|                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_2:inst14                                                              ; work         ;
-;    |clock_4:inst11|                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_4:inst11                                                              ; work         ;
-;    |clock_4:inst13|                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_4:inst13                                                              ; work         ;
+;    |clock_2:inst1|                           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_2:inst1                                                               ; work         ;
+;    |clock_4:inst11|                          ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_4:inst11                                                              ; work         ;
+;    |clock_4:inst13|                          ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_4:inst13                                                              ; work         ;
 ;    |clock_4:inst3|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_4:inst3                                                               ; work         ;
 ;    |clock_4:inst6|                           ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_4:inst6                                                               ; work         ;
-;    |clock_switch_in:inst4|                   ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_switch_in:inst4                                                       ; work         ;
-;    |clock_switch_out:inst5|                  ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_switch_out:inst5                                                      ; work         ;
+;    |clock_switch_in:inst4|                   ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_switch_in:inst4                                                       ; work         ;
+;    |clock_switch_out:inst5|                  ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AudioPlayer|clock_switch_out:inst5                                                      ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -259,39 +262,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+--------------------------------+-----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                             ;
-+----------------------------------------------------+-----------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal               ; Free of Timing Hazards ;
-+----------------------------------------------------+-----------------------------------+------------------------+
-; clock_switch_out:inst5|clk_out                     ; clock_switch_out:inst5|clk_out    ; yes                    ;
-; clock_switch_in:inst4|data_out[3]                  ; clock_switch_in:inst4|data_out[7] ; yes                    ;
-; clock_switch_in:inst4|data_out[4]                  ; clock_switch_in:inst4|data_out[7] ; yes                    ;
-; clock_switch_in:inst4|data_out[5]                  ; clock_switch_in:inst4|data_out[7] ; yes                    ;
-; clock_switch_in:inst4|data_out[7]                  ; clock_switch_in:inst4|data_out[7] ; yes                    ;
-; clock_switch_in:inst4|data_out[1]                  ; clock_switch_in:inst4|data_out[7] ; yes                    ;
-; clock_switch_in:inst4|data_out[2]                  ; clock_switch_in:inst4|data_out[7] ; yes                    ;
-; clock_switch_in:inst4|data_out[6]                  ; clock_switch_in:inst4|data_out[7] ; yes                    ;
-; clock_switch_in:inst4|data_out[0]                  ; clock_switch_in:inst4|data_out[7] ; yes                    ;
-; Number of user-specified and inferred latches = 9  ;                                   ;                        ;
-+----------------------------------------------------+-----------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+----------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                         ;
-+---------------------------------------+------------------------------------+
-; Register name                         ; Reason for Removal                 ;
-+---------------------------------------+------------------------------------+
-; clock_4:inst11|count[0]               ; Merged with clock_2:inst10|clk_out ;
-; clock_4:inst13|count[0]               ; Merged with clock_2:inst12|clk_out ;
-; clock_2:inst1|clk_out                 ; Merged with clock_4:inst3|count[0] ;
-; clock_4:inst11|count[1]               ; Lost fanout                        ;
-; clock_4:inst13|count[1]               ; Lost fanout                        ;
-; clock_4:inst3|count[1]                ; Lost fanout                        ;
-; clock_4:inst6|count[1]                ; Lost fanout                        ;
-; Total Number of Removed Registers = 7 ;                                    ;
-+---------------------------------------+------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; clock_4:inst6|count[1]                ; Lost fanout        ;
+; clock_4:inst11|count[1]               ; Lost fanout        ;
+; clock_4:inst13|count[1]               ; Lost fanout        ;
+; clock_4:inst3|count[1]                ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -299,23 +280,49 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 45    ;
+; Total registers                              ; 56    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 9     ;
+; Number of registers using Asynchronous Clear ; 24    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 40    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; clock_switch_in:inst4|data_out[0]      ; 10      ;
+; clock_switch_in:inst4|data_out[1]      ; 7       ;
+; clock_switch_in:inst4|data_out[2]      ; 4       ;
+; clock_switch_in:inst4|data_out[4]      ; 4       ;
+; clock_switch_in:inst4|data_out[3]      ; 4       ;
+; clock_switch_in:inst4|data_out[5]      ; 3       ;
+; clock_switch_in:inst4|data_out[6]      ; 2       ;
+; clock_switch_in:inst4|data_out[7]      ; 1       ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |AudioPlayer|clock_switch_out:inst5|Selector0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
 +--------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: LED:inst2 ;
-+----------------+---------+-----------------------------+
-; Parameter Name ; Value   ; Type                        ;
-+----------------+---------+-----------------------------+
-; MAX            ; 1536000 ; Signed Integer              ;
-+----------------+---------+-----------------------------+
++----------------+----------+----------------------------+
+; Parameter Name ; Value    ; Type                       ;
++----------------+----------+----------------------------+
+; MAX            ; 10000000 ; Signed Integer             ;
++----------------+----------+----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1097,22 +1104,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 18                          ;
-; cycloneiii_ff         ; 45                          ;
-;     CLR               ; 9                           ;
-;     plain             ; 36                          ;
-; cycloneiii_lcell_comb ; 103                         ;
+; boundary_port         ; 19                          ;
+; cycloneiii_ff         ; 56                          ;
+;     CLR               ; 16                          ;
+;     ENA               ; 32                          ;
+;     ENA CLR           ; 8                           ;
+; cycloneiii_lcell_comb ; 105                         ;
 ;     arith             ; 31                          ;
 ;         2 data inputs ; 31                          ;
-;     normal            ; 72                          ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 22                          ;
-;         4 data inputs ; 28                          ;
+;     normal            ; 74                          ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 21                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 15                          ;
 ; cycloneiii_pll        ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.35                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1121,7 +1129,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1131,7 +1139,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Tue Jul 26 17:57:20 2016
+    Info: Processing started: Tue Jan 03 21:29:52 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AudioPlayer -c AudioPlayer
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file pll_24576_2.v
@@ -1155,8 +1163,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file clock_4
 Info (12127): Elaborating entity "AudioPlayer" for the top level hierarchy
 Info (12128): Elaborating entity "LED" for hierarchy "LED:inst2"
 Info (12128): Elaborating entity "clock_switch_out" for hierarchy "clock_switch_out:inst5"
-Warning (10240): Verilog HDL Always Construct warning at clock_switch_out.v(11): inferring latch(es) for variable "clk_out", which holds its previous value in one or more paths through the always construct File: J:/Project/Audio Player/FPGA/clock_switch_out.v Line: 11
-Info (10041): Inferred latch for "clk_out" at clock_switch_out.v(18) File: J:/Project/Audio Player/FPGA/clock_switch_out.v Line: 18
+Info (12128): Elaborating entity "clock_4" for hierarchy "clock_4:inst3"
+Warning (10230): Verilog HDL assignment warning at clock_4.v(18): truncated value with size 32 to match size of target (2) File: J:/Project/Audio Player/FPGA/clock_4.v Line: 18
 Info (12128): Elaborating entity "PLL_225792" for hierarchy "PLL_225792:inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL_225792:inst|altpll:altpll_component" File: J:/Project/Audio Player/FPGA/PLL_225792.v Line: 112
 Info (12130): Elaborated megafunction instantiation "PLL_225792:inst|altpll:altpll_component" File: J:/Project/Audio Player/FPGA/PLL_225792.v Line: 112
@@ -1229,8 +1237,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/pll_
 Info (12128): Elaborating entity "PLL_225792_altpll" for hierarchy "PLL_225792:inst|altpll:altpll_component|PLL_225792_altpll:auto_generated" File: d:/altera_lite/15.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "clock_2" for hierarchy "clock_2:inst1"
 Warning (10230): Verilog HDL assignment warning at clock_2.v(18): truncated value with size 32 to match size of target (2) File: J:/Project/Audio Player/FPGA/clock_2.v Line: 18
-Info (12128): Elaborating entity "clock_4" for hierarchy "clock_4:inst6"
-Warning (10230): Verilog HDL assignment warning at clock_4.v(18): truncated value with size 32 to match size of target (2) File: J:/Project/Audio Player/FPGA/clock_4.v Line: 18
 Info (12128): Elaborating entity "PLL_24576_2" for hierarchy "PLL_24576_2:inst7"
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL_24576_2:inst7|altpll:altpll_component" File: J:/Project/Audio Player/FPGA/PLL_24576_2.v Line: 116
 Info (12130): Elaborated megafunction instantiation "PLL_24576_2:inst7|altpll:altpll_component" File: J:/Project/Audio Player/FPGA/PLL_24576_2.v Line: 116
@@ -1306,48 +1312,74 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/pll_
     Info (12023): Found entity 1: PLL_24576_2_altpll File: J:/Project/Audio Player/FPGA/db/pll_24576_2_altpll.v Line: 31
 Info (12128): Elaborating entity "PLL_24576_2_altpll" for hierarchy "PLL_24576_2:inst7|altpll:altpll_component|PLL_24576_2_altpll:auto_generated" File: d:/altera_lite/15.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "clock_switch_in" for hierarchy "clock_switch_in:inst4"
-Warning (10240): Verilog HDL Always Construct warning at clock_switch_in.v(11): inferring latch(es) for variable "data_out", which holds its previous value in one or more paths through the always construct File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 11
-Info (10041): Inferred latch for "data_out[0]" at clock_switch_in.v(17) File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-Info (10041): Inferred latch for "data_out[1]" at clock_switch_in.v(17) File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-Info (10041): Inferred latch for "data_out[2]" at clock_switch_in.v(17) File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-Info (10041): Inferred latch for "data_out[3]" at clock_switch_in.v(17) File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-Info (10041): Inferred latch for "data_out[4]" at clock_switch_in.v(17) File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-Info (10041): Inferred latch for "data_out[5]" at clock_switch_in.v(17) File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-Info (10041): Inferred latch for "data_out[6]" at clock_switch_in.v(17) File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-Info (10041): Inferred latch for "data_out[7]" at clock_switch_in.v(17) File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-Warning (13012): Latch clock_switch_out:inst5|clk_out has unsafe behavior File: J:/Project/Audio Player/FPGA/clock_switch_out.v Line: 6
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal next
-Warning (13012): Latch clock_switch_in:inst4|data_out[3] has unsafe behavior File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reg_add
-Warning (13012): Latch clock_switch_in:inst4|data_out[4] has unsafe behavior File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reg_add
-Warning (13012): Latch clock_switch_in:inst4|data_out[5] has unsafe behavior File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reg_add
-Warning (13012): Latch clock_switch_in:inst4|data_out[7] has unsafe behavior File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reg_add
-Warning (13012): Latch clock_switch_in:inst4|data_out[1] has unsafe behavior File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reg_add
-Warning (13012): Latch clock_switch_in:inst4|data_out[2] has unsafe behavior File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reg_add
-Warning (13012): Latch clock_switch_in:inst4|data_out[6] has unsafe behavior File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reg_add
-Warning (13012): Latch clock_switch_in:inst4|data_out[0] has unsafe behavior File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reg_add
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer clock_switch_out:inst5|Selector0 File: J:/Project/Audio Player/FPGA/clock_switch_out.v Line: 18
+Info (13000): Registers with preset signals will power-up high File: J:/Project/Audio Player/FPGA/clock_switch_in.v Line: 19
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[3] and destination clock: inst|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[3] and destination clock: inst|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[3] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info (286030): Timing-Driven Synthesis is running
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[3] and destination clock: inst|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[3] and destination clock: inst|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[3] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[3] and destination clock: inst|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst7|altpll_component|auto_generated|pll1|clk[3] and destination clock: inst|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[2] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[2] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst7|altpll_component|auto_generated|pll1|clk[3] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file J:/Project/Audio Player/FPGA/output_files/AudioPlayer.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock"
-Info (21057): Implemented 123 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "next"
+Info (21057): Implemented 126 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 103 logic cells
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 105 logic cells
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 808 megabytes
-    Info: Processing ended: Tue Jul 26 17:57:31 2016
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
+    Info: Peak virtual memory: 811 megabytes
+    Info: Processing ended: Tue Jan 03 21:30:04 2017
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in J:/Project/Audio Player/FPGA/output_files/AudioPlayer.map.smsg.
 
 

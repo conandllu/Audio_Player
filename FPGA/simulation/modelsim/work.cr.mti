@@ -1,15 +1,1 @@
-{J:/Project/Audio Player/FPGA/clock_2.v} {1 {vlog -work work -stats=none {J:/Project/Audio Player/FPGA/clock_2.v}
-Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
--- Compiling module clock_2
 
-Top level modules:
-	clock_2
-
-} {} {}} {J:/Project/Audio Player/FPGA/clock_4.v} {1 {vlog -work work -stats=none {J:/Project/Audio Player/FPGA/clock_4.v}
-Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
--- Compiling module clock_4
-
-Top level modules:
-	clock_4
-
-} {} {}}

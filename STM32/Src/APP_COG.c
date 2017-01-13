@@ -12,6 +12,7 @@
 
 static uint8_t COG_Pixel[8][128];
 extern char ASCII_8X6[96][6];
+extern char ASCII_42X30[10][180];
 
 /******************************************************************************/
 /*  @函数名   : COG_Init()                                                    */
@@ -155,18 +156,65 @@ uint8_t COG_DPChar8x6(uint16_t x, uint8_t y, char ascii)
 /*  @修改时间 : 2014-07-30                                                    */
 /*  @描述     : 显示ASCII 8x6 字符                                            */
 /******************************************************************************/
-uint8_t COG_DPChars8x6(uint16_t x, uint8_t y, char *address, uint16_t number)
+uint8_t COG_DPChars8x6(uint16_t x, uint8_t y)
 {
     uint16_t i, j;
     uint16_t Xaddress = 0;
     uint8_t  Yaddress = 0;
-    if(((x + 8) > 128) || (y > 4))
-        return 1;
-    else {
-        Xaddress = x;
-        Yaddress = y;
-    }
+
+    return 0;
 }
+
+/******************************************************************************/
+/*  @函数名   : COG_DPChar30x42                                               */
+/*  @输入     : uint16_t x   像素横坐标                                       */
+/*              uint8_t  y   像素竖坐标                                       */
+/*              char ascii   显示的字符                                       */
+/*  @输出     ：2 X坐标无效                                                   */
+/*              1 Y坐标无效                                                   */
+/*              0 显示成功                                                    */
+/*  @修改时间 : 2014-07-30                                                    */
+/*  @描述     : 显示ASCII 30x42 字符                                          */
+/******************************************************************************/
+uint8_t COG_DPChar30x42(uint16_t x, uint8_t y, char ascii)
+{
+    uint16_t i, j;
+    uint16_t Xaddress = 0;
+    uint8_t  Yaddress = 0;
+    Xaddress = x ;
+    Yaddress = y ;
+    j = 0;
+    COG_Address(Xaddress, Yaddress);
+    for(i = 0; i < 180; i++) {
+        if(j == 30) {
+            j = 0;
+            Yaddress += 1;
+            COG_Address(Xaddress, Yaddress);
+        }
+        COG_SendDATA(ASCII_42X30[ascii][i]);
+        j++;  
+    }
+    return 0;
+}
+
+/******************************************************************************/
+/*  @函数名   : COG_DPTemp                                                    */
+/*  @输入     : uint16_t Temp   温度                                          */
+/*  @输出     ：1 温度超过范围                                                */
+/*              0 显示成功                                                    */
+/*  @修改时间 : 2016-09-22                                                    */
+/*  @描述     : 显示温度                                                      */
+/******************************************************************************/
+uint8_t COG_DPTemp(uint16_t Temp)
+{
+    if(Temp > 999) 
+        return 1;
+    COG_DPChar30x42(5, 2, (Temp / 100));
+    COG_DPChar30x42(35, 2, ((Temp / 10) % 10));
+    COG_DPChar30x42(65, 2, (Temp  % 10));
+    return 0;
+}
+
 
 /******************************************************************************/
 /*  @函数名   : W25X40_Read                                                   */

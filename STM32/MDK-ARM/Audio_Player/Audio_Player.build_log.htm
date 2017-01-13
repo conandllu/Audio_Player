@@ -22,27 +22,21 @@ Dialog DLL:      TCM.DLL V1.14.8.0
  
 <h2>Project:</h2>
 J:\Project\Audio Player\STM32\CubeMX\Audio_Player\MDK-ARM\Audio_Player.uvprojx
-Project File Date:  08/14/2016
+Project File Date:  01/03/2017
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Audio_Player'
-compiling APP_COG.c...
-..\Src\APP_COG.c(169): warning:  #940-D: missing return statement at end of non-void function "COG_DPChars8x6"
-  }
-..\Src\APP_COG.c(160): warning:  #177-D: variable "i" was declared but never referenced
-      uint16_t i, j;
-..\Src\APP_COG.c(160): warning:  #177-D: variable "j" was declared but never referenced
-      uint16_t i, j;
-..\Src\APP_COG.c(161): warning:  #550-D: variable "Xaddress" was set but never used
-      uint16_t Xaddress = 0;
-..\Src\APP_COG.c(162): warning:  #550-D: variable "Yaddress" was set but never used
-      uint8_t  Yaddress = 0;
-..\Src\APP_COG.c: 5 warnings, 0 errors
+compiling main.c...
+../Src/main.c(116): warning:  #177-D: variable "aa" was declared but never referenced
+  	uint8_t aa[10] = {0x00,0x01,0x02,0x03,0x04,0x05};
+../Src/main.c(275): warning:  #177-D: function "MX_SDIO_SD_Init" was declared but never referenced
+  static void MX_SDIO_SD_Init(void)
+../Src/main.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=14668 RO-data=440 RW-data=652 ZI-data=3220  
+Program Size: Code=14740 RO-data=440 RW-data=28 ZI-data=1852  
 After Build - User command #1: C:\Keil_v5\ARM\ARMCC\bin\fromelf.exe --bin --output ./ROM/ROM.bin ./ROM/ROM.axf
-"Audio_Player\Audio_Player.axf" - 0 Error(s), 5 Warning(s).
+"Audio_Player\Audio_Player.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -60,7 +54,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:4.3.0
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

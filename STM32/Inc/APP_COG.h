@@ -23,6 +23,7 @@ void COG_Clear(void);
 void COG_SetPixel(uint16_t x, uint8_t y,uint8_t set);
 /*  COG_DPChar8x6  : ÏÔÊ¾ASCII 8x6 ×Ö·û                                       */
 uint8_t COG_DPChar8x6(uint16_t x, uint8_t y, char ascii);
+uint8_t COG_DPTemp(uint16_t Temp);
 /*  COG_WriteEN  : Flash write                                                */
 //DRESULT COG_Write(uint32_t address , uint16_t len , uint8_t *buffer);
 /*  COG_WriteEN  : Flash wait busy                                            */

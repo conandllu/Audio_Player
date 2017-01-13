@@ -17,7 +17,7 @@ audio_player\usbd_msc.o: ../Drivers/CMSIS/Include/core_cmSimd.h
 audio_player\usbd_msc.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 audio_player\usbd_msc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 audio_player\usbd_msc.o: ../Inc/stm32f4xx_hal_conf.h
-audio_player\usbd_msc.o: ../Inc/mxconstants.h
+audio_player\usbd_msc.o: ../Inc/main.h
 audio_player\usbd_msc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
 audio_player\usbd_msc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 audio_player\usbd_msc.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h

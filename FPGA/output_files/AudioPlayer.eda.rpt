@@ -1,5 +1,5 @@
 EDA Netlist Writer report for AudioPlayer
-Tue Jul 26 17:45:28 2016
+Tue Jan 03 21:30:44 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Jul 26 17:45:28 2016 ;
+; EDA Netlist Writer Status ; Successful - Tue Jan 03 21:30:44 2017 ;
 ; Revision Name             ; AudioPlayer                           ;
 ; Top-level Entity Name     ; AudioPlayer                           ;
 ; Family                    ; Cyclone IV E                          ;
@@ -89,7 +89,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Tue Jul 26 17:45:27 2016
+    Info: Processing started: Tue Jan 03 21:30:43 2017
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off AudioPlayer -c AudioPlayer
 Info (204019): Generated file AudioPlayer_8_1200mv_85c_slow.vo in folder "J:/Project/Audio Player/FPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file AudioPlayer_8_1200mv_0c_slow.vo in folder "J:/Project/Audio Player/FPGA/simulation/modelsim/" for EDA simulation tool
@@ -100,8 +100,8 @@ Info (204019): Generated file AudioPlayer_8_1200mv_0c_v_slow.sdo in folder "J:/P
 Info (204019): Generated file AudioPlayer_min_1200mv_0c_v_fast.sdo in folder "J:/Project/Audio Player/FPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file AudioPlayer_v.sdo in folder "J:/Project/Audio Player/FPGA/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 705 megabytes
-    Info: Processing ended: Tue Jul 26 17:45:28 2016
+    Info: Peak virtual memory: 709 megabytes
+    Info: Processing ended: Tue Jan 03 21:30:44 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

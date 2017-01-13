@@ -20,7 +20,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "next",
+					"name" : "CLK_OUT",
 					"strict" : false
 				},
 				{
@@ -28,7 +28,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "data[3]",
+					"name" : "data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
 					"strict" : false
 				},
 				{
@@ -36,11 +40,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "data[4]",
-					"strict" : false
-				},
-				{
-					"name" : "data[5]",
+					"name" : "data[1]",
 					"strict" : false
 				},
 				{
@@ -48,11 +48,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "data[1]",
+					"name" : "data[4]",
 					"strict" : false
 				},
 				{
-					"name" : "data[7]",
+					"name" : "data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data[5]",
 					"strict" : false
 				},
 				{
@@ -60,7 +64,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "data[0]",
+					"name" : "data[7]",
 					"strict" : false
 				}
 			]
